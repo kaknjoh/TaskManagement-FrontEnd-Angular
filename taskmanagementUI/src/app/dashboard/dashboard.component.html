@@ -1,0 +1,57 @@
+<div class="divheader">
+    <h1>TASK MANAGEMENT SYSTEM</h1>
+</div>
+<div class="search">
+    <input class="searchinput" type="text" name="title" [(ngModel)]="title" (ngModelChange)="Search()"
+        placeholder="Search task...">
+</div>
+<div class="btnsortcontainer">
+    <div class="btnsort">
+        <div class="btndiv">
+            <button class="btn2" mat-raised-button color="primary">ADD USER</button><br>
+        </div>
+        <div class="divsort">
+            <mat-form-field appearance="fill" class="matformfield">
+                <mat-label><b>Sort by</b></mat-label>
+                <mat-select [(value)]="selected">
+                    <mat-option>None</mat-option>
+                    <mat-option value="Start date">Start date</mat-option>
+                    <mat-option value="End date">End date</mat-option>
+                    <mat-option value="Status">Status</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="btndiv">
+            <button class="btn1" mat-raised-button color="primary">ADD TASK</button><br>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="task-div" *ngFor="let task of tasks | paginate: {id: 'listing_pagination', 
+                                itemsPerPage: 3,
+                                currentPage: page,
+                                totalItems: totalRecords}">
+    <mat-card matRipple class="task-card">
+        <div class="titleduetask">
+            <mat-card-header>
+                <mat-card-title>Task {{task.id}}: <b>{{task.title}}</b></mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>Due</p>
+            </mat-card-content>
+        </div>
+        <div class="moretask">
+            <mat-card-actions>
+                <button mat-button [matMenuTriggerFor]="menu" class="btnmore"><b>...</b></button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Edit</button>
+                    <button mat-menu-item (click)="removeTask( task.id )">Delete</button>
+                </mat-menu>
+            </mat-card-actions>
+        </div>
+    </mat-card>
+</div>
+<div class="paginationdiv">
+    <pagination-controls id="listing_pagination" maxSize="4" dircetionLinks="true" (pageChange)="page = $event">
+    </pagination-controls>
+</div>

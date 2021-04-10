@@ -1,0 +1,168 @@
+.divheader
+{
+    background-color: rgba(57, 30, 121, 0.829);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 110px;
+    box-shadow: 5px black;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 7px 8px;
+}
+.divheader h1
+{
+    color: rgb(253, 249, 253);
+    font-size: 45px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.search
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: rgba(212, 212, 230, 0.356);
+    padding: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 50px;   
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 10px;
+    height: 40px;
+}
+.searchinput
+{
+    height: 40px;
+    border-radius: 20px;
+    width: 500px;
+    padding-left: 10px;
+    font-size: 18px;
+    border-width: 1px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    outline: none;
+}
+.btnsortcontainer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.btnsort
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 75%;
+}
+.divsort
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+}
+.divsort p
+{
+    margin-left: 20px;
+    font-size: 15px;
+    background-color: rgba(212, 212, 230, 0.356);
+    padding: 10px;
+    border-radius: 10px;
+}
+.divsort mat-label
+{
+    font-size: 15px;
+}
+.matformfield
+{
+    height: 50px;
+    background-color: rgb(80, 54, 139);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.matformfield mat-label,
+.matformfield mat-select,
+.matformfield mat-option
+{
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+.btndiv
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn1
+{
+    background-color: rgb(80, 54, 139);
+    width: 140px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.btn2
+{
+    background-color: rgb(80, 54, 139);
+    width: 140px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+hr
+{
+    width: 70%;
+}
+.task-card
+{
+    width: 43%;
+    height: 70px;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    background-color: rgba(57, 30, 121, 0.897);
+    color: white;
+    border-radius: 20px;
+}
+.task-card mat-card-title
+{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 22px;
+}
+.task-card mat-card-content
+{
+    font-size: 16px;
+}
+.btnmore
+{
+    background-color: rgba(212, 212, 230, 0.952);
+    color: rgb(57, 30, 121);
+    font-size: 20px;
+    border-radius: 20px;
+    width: 20px;
+}
+.task-div
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.paginationdiv
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.paginationdiv pagination-controls
+{
+    padding-right: 60px;
+    background-color: rgba(203, 203, 228, 0.356);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 10px;
+    border-radius: 30px;
+    font-size: 15px;
+}
