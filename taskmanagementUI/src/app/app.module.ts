@@ -14,13 +14,16 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
-import {MatRippleModule} from '@angular/material/core';
+import { MatRippleModule } from '@angular/material/core';
+import { UserComponent } from './user/user.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import {MatRippleModule} from '@angular/material/core';
     MatInputModule,
     Ng2SearchPipeModule,
     FormsModule,
-    MatRippleModule
+    MatRippleModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

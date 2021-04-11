@@ -8,18 +8,16 @@ import { TasksService } from '../_services/tasks.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  selected: string = '';
-  
-  totalRecords: String;
+  selected: string = '';  
+  totalRecords: string;
   page: Number = 1;
   tasks: any;
   title: any;
-  counter: any = 1;
 
   constructor(private tasksService: TasksService) {
     this.tasks = new Array<any>()
   }
-
+  
   ngOnInit(): void {
     this.tasksService.getTasks().subscribe(data => {
       this.tasks = data;
@@ -36,9 +34,11 @@ export class DashboardComponent implements OnInit {
       });
     }
   }
+
   removeTask(id: number) {
     let tasksArray: any[] = Array.from(this.tasks);
     let index = tasksArray.indexOf(tasksArray.find(element => element.id == id));
     this.tasks.splice(index, 1);
   }
+
 }
