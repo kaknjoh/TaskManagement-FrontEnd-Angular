@@ -1,16 +1,27 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
 import { Task } from "../_models/task.model";
+import { from, Observable, throwError } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
+
 @Injectable({
     providedIn: 'root'
 })
 export class TasksService {
-    constructor(private httpClient: HttpClient) {
+
+    tasksurl = 'https://localhost:44388/api/taskunit';
+    _url = 'https://localhost:44388/api/taskunit';
+
+    constructor(private httpClient: HttpClient) { }
+
+    getTasks(): Observable<Task[]> {
+        return this.httpClient.get<Task[]>(this.tasksurl);
     }
 
-    getTasks() {
-        return this.httpClient.get('https://jsonplaceholder.typicode.com/posts');
+    deleteTaskUnit(id: number) {
+        this.httpClient.delete(this._url + '/' + id).subscribe(data => {
+            alert("Task " + id + ": Successfully removed!");
+        });
+        
     }
-
 }

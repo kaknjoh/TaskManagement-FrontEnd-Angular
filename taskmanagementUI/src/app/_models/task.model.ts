@@ -1,6 +1,11 @@
+import { Collection } from "ngx-pagination/dist/paginate.pipe";
+import { User } from "../_models/user.model";
+
 export interface Task {
-    userId: number,
-    id: number,
-    title: string,
-    body: string
+    taskUnitId: number,
+    name: string,
+    description:string,
+    startDate: Date,
+    endDate: Date,
+    any: Collection<User>;
 }

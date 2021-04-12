@@ -9,15 +9,23 @@ import { User } from '../_models/user.model';
 })
 export class UserComponent {
   userModel = <User>{};
+  users: User[];
 
   constructor(private usersService: UsersService) { }
 
   addUser() {
     console.log(this.userModel);
-    this.usersService.getUser(this.userModel).subscribe(
-      data => console.log("Success", data),
-      error => console.log("Error", error)
+    this.usersService.postUser(this.userModel).subscribe(
+      data => {alert("User successfully added!")},
     )
   }
+
+  getUsersList()
+  {
+    this.usersService.getAllUsers().subscribe(data =>{
+      this.users = data;
+    })
+  }
+
 
 }

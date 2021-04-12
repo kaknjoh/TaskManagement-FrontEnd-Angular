@@ -2,8 +2,8 @@
     <h1>TASK MANAGEMENT SYSTEM</h1>
 </div>
 <div class="search">
-    <input class="searchinput" type="text" name="title" [(ngModel)]="title" (ngModelChange)="Search()"
-        placeholder="Search task...">
+    <input class="searchinput" type="text" name="name" [(ngModel)]="Name" [(ngModel)]='Description' (ngModelChange)="Search()"
+        placeholder="Search task... (By name or description)">
 </div>
 <div class="btnsortcontainer">
     <div class="btnsort">
@@ -34,10 +34,10 @@
     <mat-card matRipple class="task-card">
         <div class="titleduetask">
             <mat-card-header>
-                <mat-card-title>Task {{task.id}}: <b>{{task.title}}</b></mat-card-title>
+                <mat-card-title>Task {{task.taskUnitId}} : <b>{{task.name}}</b></mat-card-title>
             </mat-card-header>
             <mat-card-content>
-                <p>Due</p>
+                <p>Due {{task.endDate}}</p>
             </mat-card-content>
         </div>
         <div class="moretask">
@@ -45,9 +45,14 @@
                 <button mat-button [matMenuTriggerFor]="menu" class="btnmore"><b>...</b></button>
                 <mat-menu #menu="matMenu">
                     <button mat-menu-item>Edit</button>
-                    <button mat-menu-item (click)="removeTask( task.id )">Delete</button>
+                    <button mat-menu-item (click)="removeTask(task.taskUnitId)">Delete</button>
                 </mat-menu>
             </mat-card-actions>
+        </div>
+        <div *ngFor="let user of users">
+            <h3>
+                {{user.firstName}}
+            </h3>
         </div>
     </mat-card>
 </div>
