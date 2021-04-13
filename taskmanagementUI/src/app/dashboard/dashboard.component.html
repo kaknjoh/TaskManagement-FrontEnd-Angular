@@ -2,8 +2,8 @@
     <h1>TASK MANAGEMENT SYSTEM</h1>
 </div>
 <div class="search">
-    <input class="searchinput" type="text" name="name" [(ngModel)]="Name" [(ngModel)]='Description' (ngModelChange)="Search()"
-        placeholder="Search task... (By name or description)">
+    <input class="searchinput" type="text" name="name" [(ngModel)]="Name"
+        (ngModelChange)="Search()" placeholder="Search task...">
 </div>
 <div class="btnsortcontainer">
     <div class="btnsort">
@@ -32,7 +32,7 @@
                                 currentPage: page,
                                 totalItems: totalRecords}">
     <mat-card matRipple class="task-card">
-        <div class="titleduetask">
+        <div class="titleduetask" (click)="viewDetails(task.taskUnitId)">
             <mat-card-header>
                 <mat-card-title>Task {{task.taskUnitId}} : <b>{{task.name}}</b></mat-card-title>
             </mat-card-header>
@@ -48,11 +48,6 @@
                     <button mat-menu-item (click)="removeTask(task.taskUnitId)">Delete</button>
                 </mat-menu>
             </mat-card-actions>
-        </div>
-        <div *ngFor="let user of users">
-            <h3>
-                {{user.firstName}}
-            </h3>
         </div>
     </mat-card>
 </div>

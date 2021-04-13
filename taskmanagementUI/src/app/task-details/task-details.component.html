@@ -1,0 +1,26 @@
+<h1 mat-dialog-title class="divdetails"> <b>Details:</b> Task {{data.taskUnitId}} </h1>
+<h2 class="title"> <b>{{data.name}}</b></h2>
+<div class="divdates">
+    <div class="div1">
+        <p> <b>Start date:</b> {{data.startDate}}</p>
+        <p> <b>End date:</b> {{data.endDate}}</p>
+    </div>
+</div>
+<div class="divdesc">
+    <h3><b>Description</b></h3>
+    <p>{{data.description}}</p>
+</div>
+<div class="divasignees">
+    <h3><b>Asignee/s</b></h3>
+    <div *ngFor="let user of data.assignedUsers">
+        <h3> {{user.firstName}} {{user.lastName}} </h3>
+    </div>
+</div>
+<div class="detailsbuttons" mat-dialog-actions>
+    <div class="editclosediv">
+        <button class="btneditback" mat-raised-button color="primary" type="button">EDIT USER</button>
+    </div>
+    <div class="editclosediv">
+        <button class="btneditback" mat-raised-button color="primary" (click)="onNoClick()">CLOSE</button>
+    </div>
+</div>

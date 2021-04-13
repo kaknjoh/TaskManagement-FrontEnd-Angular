@@ -1,8 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Task } from "../_models/task.model";
-import { from, Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -21,7 +20,6 @@ export class TasksService {
     deleteTaskUnit(id: number) {
         this.httpClient.delete(this._url + '/' + id).subscribe(data => {
             alert("Task " + id + ": Successfully removed!");
-        });
-        
+        });     
     }
 }

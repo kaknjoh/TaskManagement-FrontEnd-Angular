@@ -7,5 +7,5 @@ export interface Task {
     description:string,
     startDate: Date,
     endDate: Date,
-    any: Collection<User>;
+    assignedUsers: Collection<User>
 }

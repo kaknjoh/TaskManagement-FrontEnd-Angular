@@ -17,13 +17,17 @@ import { FormsModule } from '@angular/forms';
 import { MatRippleModule } from '@angular/material/core';
 import { UserComponent } from './user/user.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CommonModule } from "@angular/common";
+import { TaskDetailsComponent } from './task-details/task-details.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    UserComponent
+    UserComponent,
+    TaskDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     Ng2SearchPipeModule,
     FormsModule,
     MatRippleModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

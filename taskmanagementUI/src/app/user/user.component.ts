@@ -16,16 +16,8 @@ export class UserComponent {
   addUser() {
     console.log(this.userModel);
     this.usersService.postUser(this.userModel).subscribe(
-      data => {alert("User successfully added!")},
+      data => { alert("User successfully added!") },
     )
   }
-
-  getUsersList()
-  {
-    this.usersService.getAllUsers().subscribe(data =>{
-      this.users = data;
-    })
-  }
-
 
 }
