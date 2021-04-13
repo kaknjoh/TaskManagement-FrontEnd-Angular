@@ -16,5 +16,4 @@ export class TaskDetailsComponent {
     onNoClick(): void {
         this.dialogRef.close();
     }
-
 }

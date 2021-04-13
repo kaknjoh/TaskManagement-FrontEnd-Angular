@@ -14,10 +14,8 @@ export class UserComponent {
   constructor(private usersService: UsersService) { }
 
   addUser() {
-    console.log(this.userModel);
     this.usersService.postUser(this.userModel).subscribe(
       data => { alert("User successfully added!") },
     )
   }
-
 }

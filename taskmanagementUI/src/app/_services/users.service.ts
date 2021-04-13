@@ -8,16 +8,15 @@ import { from, Observable, throwError } from 'rxjs';
 })
 export class UsersService {
 
-    // surl = 'https://localhost:44388/api/taskunit';
-    _url = 'https://localhost:44388/api/assigneduser';
+    usersUrl = 'https://localhost:44388/api/assigneduser';
 
     constructor(private _http: HttpClient) { }
 
     postUser(user: User) {
-        return this._http.post<any>(this._url, user);
+        return this._http.post<any>(this.usersUrl, user);
     }
 
     getAllUsers(): Observable<User[]> {
-        return this._http.get<User[]>(this._url);
+        return this._http.get<User[]>(this.usersUrl);
     }
 }

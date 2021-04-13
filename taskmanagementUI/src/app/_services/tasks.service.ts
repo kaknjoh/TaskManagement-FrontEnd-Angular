@@ -8,17 +8,16 @@ import { Observable } from 'rxjs';
 })
 export class TasksService {
 
-    tasksurl = 'https://localhost:44388/api/taskunit';
-    _url = 'https://localhost:44388/api/taskunit';
+    tasksUrl = 'https://localhost:44388/api/taskunit'
 
     constructor(private httpClient: HttpClient) { }
 
     getTasks(): Observable<Task[]> {
-        return this.httpClient.get<Task[]>(this.tasksurl);
+        return this.httpClient.get<Task[]>(this.tasksUrl);
     }
 
     deleteTaskUnit(id: number) {
-        this.httpClient.delete(this._url + '/' + id).subscribe(data => {
+        this.httpClient.delete(this.tasksUrl + '/' + id).subscribe(data => {
             alert("Task " + id + ": Successfully removed!");
         });     
     }

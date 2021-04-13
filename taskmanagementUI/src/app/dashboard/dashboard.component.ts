@@ -14,8 +14,7 @@ export class DashboardComponent {
   totalRecords: string;
   page: Number = 1;
   tasks: Task[];
-  Name: any;
-  Description: any;
+  name: any;
 
   constructor(private tasksService: TasksService,
     public dialog: MatDialog) { }
@@ -30,13 +29,13 @@ export class DashboardComponent {
     })
   }
 
-  Search() {
-    if ((this.Name == "")) {
+  searchTask() {
+    if ((this.name == "")) {
       this.ngOnInit();
     }
     else {
       this.tasks = this.tasks.filter(res => {
-        return res.name.toLocaleLowerCase().match(this.Name.toLocaleLowerCase());
+        return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
       });
     }
   }
