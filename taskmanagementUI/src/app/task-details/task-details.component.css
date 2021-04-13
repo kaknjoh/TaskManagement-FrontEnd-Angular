@@ -1,0 +1,30 @@
+.divdetails 
+{
+    text-align: center;
+}
+.detailsbuttons{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 10px;
+}
+.editclosediv
+{
+    display: flex;
+    justify-content: center;
+}
+.btneditback{
+    background-color: rgb(80, 54, 139);
+    width: 100px;
+    height: 40px;
+    font-size: 13px;
+    color:white;
+    border-radius: 10px;
+    border: none;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 4px 15px;
+}
+.btneditback:hover
+{
+    background-color: rgb(52, 29, 105);
+}
