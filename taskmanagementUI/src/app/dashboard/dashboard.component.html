@@ -1,6 +1,12 @@
-<div class="divheader">
-    <h1>TASK MANAGEMENT SYSTEM</h1>
+<div class="divheader" color="primary">
+    <div class="headerdiv1"></div>
+    <div class="headertitle">
+        <h1>TASK MANAGEMENT SYSTEM</h1>
+    </div>
+    <div class="headerdivtoogle">
 </div>
+</div>
+
 <div class="search">
     <input class="searchinput" type="text" name="name" [(ngModel)]="name"
         (ngModelChange)="searchTask()" placeholder="Search task...">
@@ -8,10 +14,10 @@
 <div class="btnsortcontainer">
     <div class="btnsort">
         <div class="btndiv">
-            <button class="btn2" mat-raised-button color="primary" [routerLink]="['/users']">ADD USER</button><br>
+            <button class="btn2" mat-raised-button color="primary" [routerLink]="['/manageusers']">MANAGE USER</button><br>
         </div>
         <div class="divsort">
-            <mat-form-field appearance="fill" class="matformfield">
+            <mat-form-field appearance="fill" class="matformfield" color="primary">
                 <mat-label><b>Sort by</b></mat-label>
                 <mat-select [(value)]="selected">
                     <mat-option>None</mat-option>
@@ -30,8 +36,8 @@
 <div class="task-div" *ngFor="let task of tasks | paginate: {id: 'listing_pagination', 
                                 itemsPerPage: 6,
                                 currentPage: page,
-                                totalItems: totalRecords}">
-    <mat-card matRipple class="task-card">
+                                totalItems: totalRecords}" >
+    <mat-card class="task-card">
         <div class="titleduetask" (click)="viewDetails(task.taskUnitId)">
             <mat-card-header>
                 <mat-card-title>Task {{task.taskUnitId}} : <b>{{task.name}}</b></mat-card-title>

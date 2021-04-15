@@ -1,22 +1,23 @@
 <div class="e-form">
     <br>
     <h1>ADD USER</h1>
-    <form ngNativeValidate class="add-form" (ngSubmit)="addUser()" action="">
+    <form ngNativeValidate class="add-form" (ngSubmit)="addUser()" action="" #userForm="ngForm">
         <mat-form-field class="full-width">
             <mat-label>First Name</mat-label>
-            <input required matInput placeholder="First name..." [(ngModel)]="userModel.firstName"
-                [ngModelOptions]="{standalone: true}">
+            <input name="firstName" #firstName="ngModel" required matInput placeholder="First name..."
+                [(ngModel)]="userModel.firstName">
         </mat-form-field>
         <br>
         <mat-form-field class="full-width">
             <mat-label>Last name</mat-label>
-            <input required matInput placeholder="Last name..." [(ngModel)]="userModel.lastName"
-                [ngModelOptions]="{standalone: true}">
+            <input name="lastName" #lastName="ngModel" required matInput placeholder="Last name..."
+                [(ngModel)]="userModel.lastName">
         </mat-form-field>
         <div class="grid">
-            <button class="btnuserback" mat-raised-button color="primary" type="submit">ADD USER</button>
+            <button [disabled]="userForm.form.invalid" class="btnuserback" mat-raised-button color="primary"
+                type="submit">ADD USER</button>
             <button class="btnuserback" mat-raised-button color="primary" type="button"
-                [routerLink]="['/dashboard']">BACK</button>
+                [routerLink]="['/manageusers']">BACK</button>
         </div>
     </form>
 </div>

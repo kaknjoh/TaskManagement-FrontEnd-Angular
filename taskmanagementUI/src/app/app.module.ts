@@ -20,6 +20,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from "@angular/common";
 import { TaskDetailsComponent } from './task-details/task-details.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { ManageUsersComponent } from './manage-users/manage-users.component';
+import {MatTableModule} from '@angular/material/table';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -27,7 +34,8 @@ import { TaskDetailsComponent } from './task-details/task-details.component';
     AppComponent,
     DashboardComponent,
     UserComponent,
-    TaskDetailsComponent
+    TaskDetailsComponent,
+    ManageUsersComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +55,12 @@ import { TaskDetailsComponent } from './task-details/task-details.component';
     MatFormFieldModule,
     MatDialogModule,
     MatFormFieldModule,
-    CommonModule
+    CommonModule,
+    MatSlideToggleModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatTableModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -19,17 +19,17 @@ export class DashboardComponent {
   constructor(private tasksService: TasksService,
     public dialog: MatDialog) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getTasksList();
   }
 
-  getTasksList() {
+  getTasksList(): void {
     this.tasksService.getTasks().subscribe(data => {
       this.tasks = data;
     })
   }
 
-  searchTask() {
+  searchTask(): any {
     if ((this.name == "")) {
       this.ngOnInit();
     }
@@ -40,7 +40,7 @@ export class DashboardComponent {
     }
   }
 
-  removeTask(id: number) {
+  removeTask(id: number): void {
     let tasksArray: Task[] = Array.from(this.tasks);
     let index = tasksArray.indexOf(tasksArray.find(element => element.taskUnitId == id));
     this.tasksService.deleteTaskUnit(id);

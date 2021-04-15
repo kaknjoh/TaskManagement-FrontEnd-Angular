@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../_services/users.service';
+import { UserService } from '../_services/users.service';
 import { User } from '../_models/user.model';
 
 @Component({
@@ -9,13 +9,12 @@ import { User } from '../_models/user.model';
 })
 export class UserComponent {
   userModel = <User>{};
-  users: User[];
 
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UserService) { }
 
-  addUser() {
+  addUser(): void{
     this.usersService.postUser(this.userModel).subscribe(
-      data => { alert("User successfully added!") },
-    )
+      data => { alert("User successfully added!");
+    })
   }
 }

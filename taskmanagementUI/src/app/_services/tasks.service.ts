@@ -2,14 +2,16 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Task } from "../_models/task.model";
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
 })
 export class TasksService {
 
-    tasksUrl = 'https://localhost:44388/api/taskunit'
 
+    tasksUrl = environment.baseUrl + '/api/taskunit';
+    
     constructor(private httpClient: HttpClient) { }
 
     getTasks(): Observable<Task[]> {

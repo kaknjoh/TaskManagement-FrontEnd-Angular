@@ -1,0 +1,30 @@
+<div class="adduserdiv">
+    <div class="adduser">
+        <button class="btn2" mat-raised-button color="primary" [routerLink]="['/users']">ADD USER</button><br>
+    </div>
+</div>
+<div class="tablediv">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="th">User ID</th>
+                <th class="th">First name</th>
+                <th class="th">Last name</th>
+                <th class="th">Remove user</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.assignedUserId}}</td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td><button class="deletebutton" (click)="removeUser(user.assignedUserId)">Delete user</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="backuserdiv">
+    <div class="backuser">
+        <button class="btn3" mat-raised-button color="primary" [routerLink]="['/dashboard']">BACK</button><br>
+    </div>
+</div>
