@@ -19,4 +19,10 @@ export class UsersService {
     getAllUsers(): Observable<User[]> {
         return this._http.get<User[]>(this.usersUrl);
     }
+
+    deleteUser(id: number) {
+        this._http.delete(this.usersUrl + '/' + id).subscribe(data => {
+            alert("User with ID " + id + ": Successfully removed!");
+        });     
+    }
 }

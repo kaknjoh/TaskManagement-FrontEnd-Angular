@@ -9,13 +9,12 @@ import { User } from '../_models/user.model';
 })
 export class UserComponent {
   userModel = <User>{};
-  users: User[];
 
   constructor(private usersService: UsersService) { }
 
   addUser() {
     this.usersService.postUser(this.userModel).subscribe(
-      data => { alert("User successfully added!") },
-    )
+      data => { alert("User successfully added!");
+    })
   }
 }
