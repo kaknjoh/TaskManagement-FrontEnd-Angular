@@ -1,20 +1,21 @@
-table {
+table 
+{
     width: 80%;
     background-color: rgba(226, 241, 239, 0.534);
-  }
-  .tablediv
-  {
-      display: flex;
-      justify-content: center;
-  }
-  .adduserdiv
-  {
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-      margin-bottom: 50px;
-  }
-  .btn2
+}
+.tablediv
+{
+    display: flex;
+    justify-content: center;
+}
+.adduserdiv
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.btn2
 {
     background-color: rgb(80, 54, 139);
     width: 160px;
@@ -48,13 +49,13 @@ tr
     background-color: rgb(231, 213, 213);
 }
 .backuserdiv
-  {
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-      margin-bottom: 50px;
-  }
-  .btn3
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.btn3
 {
     background-color: rgb(80, 54, 139);
     width: 120px;

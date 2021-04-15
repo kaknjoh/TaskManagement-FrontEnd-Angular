@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../_models/user.model';
-import { UsersService } from '../_services/users.service';
+import { UserService } from '../_services/users.service';
 
 @Component({
   selector: 'app-manage-users',
@@ -10,22 +10,22 @@ import { UsersService } from '../_services/users.service';
 export class ManageUsersComponent implements OnInit {
   users: User[];
 
-  constructor(private usersService: UsersService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.getUsersList();
   }
 
-  getUsersList() {
-    this.usersService.getAllUsers().subscribe(data => {
+  getUsersList(): void {
+      this.userService.getAllUsers().subscribe(data => {
       this.users = data;
     })
   }
 
-  removeUser(id: number) {
+  removeUser(id: number): void {
     let usersArray: User[] = Array.from(this.users);
     let index = usersArray.indexOf(usersArray.find(element => element.assignedUserId == id));
-    this.usersService.deleteUser(id);
+    this.userService.deleteUser(id);
     this.users.splice(index, 1);
   }
 }
